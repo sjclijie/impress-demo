@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>HTML5初探</title>
+    <title>前端模块化开发的价值</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -13,82 +13,134 @@
 
     <section class="step" data-x="0" data-y="-1000" data-rotate="90" style="position: absolute; transform: translate(-50%, -50%) translate3d(0px, -1000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(90deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
         <div class="title">
-            <h1>代码串讲</h1>
+            <h1>前端模块化开发的价值</h1>
             <h2>李杰</h2>
         </div>
     </section>
 
     <section class="step" data-x="1000" data-y="-1000" style="position: absolute; transform: translate(-50%, -50%) translate3d(1000px, -1000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
-        <h1 class="header">HTML5是什么？</h1>
+        <ul>
+            <li>1. 为什么要使用模块化的javascript？</li>
+            <li>2. 如何编写模块化的javascript？</li>
+            <li>3. AMD & CMD & Commonjs</li>
+            <li>4. 模块化加载器的实现</li>
+            <li>5. 拥抱ES6</li>
+        </ul>
     </section>
 
     <section class="step slide" data-x="1000" data-y="0" style="position: absolute; transform: translate(-50%, -50%) translate3d(1000px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
-        <h1>HTML5是什么？</h1>
+        <h1>为什么要使用模块化的javascript？</h1>
         <div class="cont">
-            <ul>
-                <li>狭义HTML5</li>
-                <li>广义HTML5</li>
-                <li>HTML5新特性</li>
-            </ul>
-        </div>
-        <h2>HTML5能做什么？</h2>
-        <div class="cont">
-            <ul>
-                <li>OS: <a href="http://www.alessioatzeni.com/mac-osx-lion-css3/" target="blank" class="external">Mac OS X Lion CSS3</a></li>
-                <li>特效：<a href="http://lights.elliegoulding.com/" target="blank" class="external">Lights With Canvas</a></li>
-                <li>游戏：<a href="http://www.cuttherope.ie/" target="_blank" class="external">Cut the Rope HTML5版</a></li>
-                <li>web：<a href="http://alteredqualia.com/canvasmol/" target="_blank" class="external">元素周期表</a>、<a href="http://intacto10years.com/index_start.php" target="_blank" class="external">inTacto 10 Years</a>、<a href="http://hakim.se/experiments/html5/sketch/" target="_blank" class="external">Sketch</a></li>
-            </ul>
+            <br />
+            <h3>任何语言一到大规模应用的时候,必然要经历拆分模块的过程,以便利于维护和团队的协作</h3>
+            <br />
+            <h3>在前端项目中经常使用到的如jQuery、underscore.js等库，其实就可以看作是公共模块，它们对常用的、工具性的代码提供了抽象</h3>
         </div>
     </section>
 
     <section class="step slide" data-x="2000" data-y="0" style="position: absolute; transform: translate(-50%, -50%) translate3d(2000px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
-        <h1>什么是狭义HTML5？</h1>
+        <h1>模块化的价值</h1>
+        <br />
         <div class="cont">
             <ul>
-                <li>仍是<dfn><abbr title="HyperText Markup Language">HTML</abbr></dfn>；</li>
-                <li>新标记、新属性、旧标记和属性的增删改</li>
-                <li>1999年制定的HTML 4.01和XHTML 1.0标准的升级版；</li>
-                <li>前身是2004年<a href="http://zh.wikipedia.org/wiki/WHATWG" class="external" target="_blank" title="Web Hypertext Application Technology Working Group">WHATWG</a>提出的Web Applications 1.0，2007年被<a href="http://zh.wikipedia.org/wiki/W3C" class="external" target="_blank" title="World Wide Web Consortium">W3C</a>接纳；</li>
+                <li>公共模块通常用于促进代码的复用</li>
+                <li>业务模块通过用于提升代码的可维护性</li>
+                <li>命名冲突</li>
+                <li>文件依赖</li>
+                <li>模块版本管理</li>
+                <li>前端性能优化</li>
+                <li>...</li>
             </ul>
-            <div class="notes">
-                <p>早期的HTML语法被定义成较松散的规则，以助于不熟悉网络出版的人采用。但从2000起，web开发人员开始习惯使用XML语法的XHTML 1.0，虽然HTML5不是基于XHTML的，但建议使用XHTML的语法。这是一个良好的开始，也应该保持下去。一致的代码风格和规范，不仅爽心悦目，也让项目易于读写和维护。</p>
-                <p>本来计划用来替换HTML4.01的具有更严格语义和语法的XHTML 2.0，因为是一个彻底重构的激进版本，这一计划内部受阻后，HTML5才浮出水面。部分相关链接：<a href="http://dig.csail.mit.edu/breadcrumbs/node/166" target="_blank">Reinventing HTML</a></p>
-            </div>
         </div>
     </section>
 
     <section class="step slide" data-x="3000" data-y="0" style="position: absolute; transform: translate(-50%, -50%) translate3d(3000px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
-        <h1>什么是广义HTML5？</h1>
+        <h1>举个栗子？</h1>
+        <br />
         <div class="cont">
-            <ul>
-                <li>技术组合：包括HTML, CSS, JavaScript, Web Application API, 甚至<dfn><abbr title="Scalable Vector Graphics">SVG</abbr></dfn>。类同<dfn><abbr title="Asynchronous JavaScript And XML">ajax</abbr></dfn>；</li>
-                <li>现在热度无限HTML5，人们在谈起它时，更多是在阐述一种概念，这有点像当年的web2.0；</li>
-                <li>HTML5的出现，希望能减少对插件类的<dfn><abbr title="Rich Internet applications">RIA</abbr></dfn>的需求，如：flash, flex, silverlight等；</li>
-            </ul>
-            <div class="notes">
-                <p>误区：一个普遍的误解是HTML5能够在网页中提供动画效果，这是不准确的。动画效果是由JavaScript和CSS实现的。</p>
+            <div class="code">
+                <span class="legend">从前</span>
+                <p>
+        <pre>
+        //遍历数组
+        function each( arr ){}
+
+        //记录日志
+        function log(str){}
+        </pre>
+                </p>
             </div>
         </div>
+        <br />
+        <p>并将这些函数统一放到utils.js里,需要用到时,引入该文件就行</p>
     </section>
 
     <section class="step slide" data-x="4000" data-y="0" style="position: absolute; transform: translate(-50%, -50%) translate3d(4000px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
-        <h1>HTML5新特性</h1>
+        <h1>引入命名空间</h1>
+        <br />
+        <div class="cont">
+            <div class="code">
+                <p>
+        <pre>
+        var org = {};
+        org.Site = {};
+        org.Site.Utils = {};
+
+        org.Site.Utils.isString = function(){
+            //...
+        }
+
+        org.Site.Utils.isArray = function(){
+            //...
+        }
+        </pre>
+                </p>
+            </div>
+        </div>
+        <br />
+        <p>并将这些函数统一放到utils.js里,需要用到时,引入该文件就行</p>
+    </section>
+
+    <section class="step slide" data-x="5000" data-y="0" style="position: absolute; transform: translate(-50%, -50%) translate3d(4000px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
+        <h1>另一个问题</h1>
+        <br />
+        <h3>文件依赖</h3>
+        <div class="cont">
+            <div class="code">
+                <p>
+        <pre>
+        &lt;script&gt; src="utils.js"&gt;&lt;/script&gt;
+        &lt;script&gt; src="dialog.js"&gt;&lt;/script&gt;
+        &lt;script&gt;
+            org.Site.Dialog.init({ /*传入配置*/ })
+        &lt;/script&gt;
+        </pre>
+                </p>
+            </div>
+        </div>
+        <br />
+    </section>
+
+    <section class="step slide" data-x="6000" data-y="0" style="position: absolute; transform: translate(-50%, -50%) translate3d(4000px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
+        <h1>其它的问题...</h1>
+        <br />
         <div class="cont">
             <ul>
-                <li>新增更语义化和功能化标记，删除和修改部分旧标记；</li>
-                <li>更简洁的代码；</li>
-                <li>CSS3</li>
-                <li>JS API；</li>
+                <li>通用组更新了前端的基础类库, 却很难推动全站升级</li>
+                <li>业务组想用一个新的通用组件,却无法通过几行代码搞定</li>
+                <li>老的项目只能基本老的类库接续开发,升级困难</li>
+                <li>公司整合业务,需要合并产品线,发现前端代码冲突</li>
+                <li>...</li>
             </ul>
         </div>
     </section>
 
-    <section class="step" data-x="6000" data-y="600" data-rotate="90" id="step-7" style="position: absolute; transform: translate(-50%, -50%) translate3d(6000px, 600px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(90deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
-        <h1 class="header">浏览器对HTML5的支持</h1>
+
+    <section class="step" data-x="7000" data-y="600" data-rotate="90" style="position: absolute; transform: translate(-50%, -50%) translate3d(6000px, 600px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(90deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
+        <h3 class="header">如何编写模块化的javascript</h3>
     </section>
 
-    <section class="step slide" data-x="5000" data-y="0" style="position: absolute; transform: translate(-50%, -50%) translate3d(5000px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
+    <section class="step slide" data-x="6000" data-y="1000" style="position: absolute; transform: translate(-50%, -50%) translate3d(5000px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
         <h1>PC端浏览器对HTML5的支持</h1>
         <div class="cont">
             <p class="img"><img src="./images/support.png" alt="Browser support for html5"></p>
@@ -123,10 +175,6 @@
         <div class="notes">
             <p>微软从IE6到IE7用了10年，而从IE7到IE9，每个版本升级都只用了2年左右，再到不久即将发布的IE10，版本周期越来越短，而对这些版本的升级，很大一部分比重都在于对HTML5,CSS3和JavaScript的支持上，由此可见微软对HTML5重视程度。</p>
         </div>
-    </section>
-
-    <section class="step" data-x="3000" data-y="-1000" data-rotate="90" id="step-11" style="position: absolute; transform: translate(-50%, -50%) translate3d(3000px, -1000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(90deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
-        <h1 class="header">HTML5标记变化</h1>
     </section>
 
     <section  class="step slide" data-x="3000" data-y="1000" style="position: absolute; transform: translate(-50%, -50%) translate3d(3000px, 1000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
