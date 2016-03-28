@@ -22,7 +22,7 @@
         <ul>
             <li>1. 为什么要使用模块化的javascript？</li>
             <li>2. 如何编写模块化的javascript？</li>
-            <li>3. AMD & CMD & Commonjs</li>
+            <li>3. AMD & CMD</li>
             <li>4. 模块化加载器的实现</li>
             <li>5. 拥抱ES6</li>
         </ul>
@@ -122,6 +122,23 @@
     </section>
 
     <section class="step slide" data-x="6000" data-y="0" style="position: absolute; transform: translate(-50%, -50%) translate3d(4000px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
+        <h1>出错了???</h1>
+        <br />
+        <div class="cont">
+            <div class="code">
+                <p>
+        <pre>
+        &lt;script&gt; src="dialog.js"&gt;&lt;/script&gt;
+        &lt;script&gt;
+            org.Site.Dialog.init({ /*传入配置*/ })
+        &lt;/script&gt;
+        </pre>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="step slide" data-x="7000" data-y="0" style="position: absolute; transform: translate(-50%, -50%) translate3d(4000px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
         <h1>其它的问题...</h1>
         <br />
         <div class="cont">
@@ -135,129 +152,145 @@
         </div>
     </section>
 
-
-    <section class="step" data-x="7000" data-y="600" data-rotate="90" style="position: absolute; transform: translate(-50%, -50%) translate3d(6000px, 600px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(90deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
+    <section class="step" data-x="7000" data-y="1000" data-rotate="90" style="position: absolute; transform: translate(-50%, -50%) translate3d(6000px, 600px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(90deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
         <h3 class="header">如何编写模块化的javascript</h3>
     </section>
 
     <section class="step slide" data-x="6000" data-y="1000" style="position: absolute; transform: translate(-50%, -50%) translate3d(5000px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
-        <h1>PC端浏览器对HTML5的支持</h1>
-        <div class="cont">
-            <p class="img"><img src="./images/support.png" alt="Browser support for html5"></p>
-            <div class="notes">
-                <p>总分数为475，可以清晰的看到当前高级浏览器（包括IE10）对HTML5的支持都达到了300分以上，即基本都支持了65%以上的HTML5新特性，而这已实现的65%左右的新特性正是我们最希望实现、也最实用的部分</p>
-            </div>
-        </div>
+        <h1>模块是什么?</h1>
+        <br />
+        <h3>可组合, 分解和更换的单元</h3>
+        <br />
+        <h3>可组成系统的, 具有某种确定的独立的功能的子系统</h3>
+        <br />
+        <h3>是较大系统的独立部件</h3>
+        <br />
+        <h3>功能, 状态与接口反映外部特性, 逻辑反映反映内部特性</h3>
         <footer>
-            <a href="http://html5test.com/" target="_blank" class="external">html5test</a>
+            <a href="http://baike.baidu.com/view/22845.htm" target="_blank" class="external">http://baike.baidu.com/view/22845.htm</a>
         </footer>
     </section>
 
     <section class="step slide" data-x="5000" data-y="1000" style="position: absolute; transform: translate(-50%, -50%) translate3d(5000px, 1000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
-        <h1>移动端浏览器对HTML5的支持</h1>
-        <div class="cont">
-            <p class="img"><img src="./images/support_mobile.png" alt="Mobile Browser support for html5"></p>
-            <div class="notes">
-                <p>从上图的数据中，我们可以看出，HTML5目前在移动端比PC端更具优势，而且再也不用为低版本的IE头痛</p>
-            </div>
-        </div>
-        <footer>
-            <a href="http://html5test.com/" target="_blank" class="external">html5test</a>
-        </footer>
+        <h1>前端模块抽离的原则</h1>
+        <br />
+        <h3>充分了解产品的需求, 熟读PRD</h3>
+        <br />
+        <h3>深度挖掘产品的需求, 提炼模块</h3>
+        <br />
+        <h3>从视觉规范中抽离高耦合,高相似的部分</h3>
+        <br />
+        <h3>模块化业务需求中的重合部分</h3>
+        <br />
+        <h3>暴露接口实现格式间的通讯</h3>
     </section>
 
     <section  class="step slide" data-x="4000" data-y="1000" style="position: absolute; transform: translate(-50%, -50%) translate3d(4000px, 1000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
-        <h1>HTML5大有可为</h1>
         <div class="cont">
-            <p>随着越来越多的互联网巨头对HTML5的看好，纷纷加入W3C期望参与到HTML5草案的制定，从一开始国外的Apple, Google, Yahoo, Opera, Mozilla，到后来的Microsoft，再到国内的华为，百度，UC，腾讯，360等。</p>
-            <p>浏览器厂商卖力的升级自家的产品，相信在未来几年内，整个互联网将会发生创造性的变化，用户将能最终享受到由于技术升级带来的好处。</p>
-        </div>
-        <div class="notes">
-            <p>微软从IE6到IE7用了10年，而从IE7到IE9，每个版本升级都只用了2年左右，再到不久即将发布的IE10，版本周期越来越短，而对这些版本的升级，很大一部分比重都在于对HTML5,CSS3和JavaScript的支持上，由此可见微软对HTML5重视程度。</p>
+            <p class="img"><img src="http://ww4.sinaimg.cn/large/8b31d4ddgw1f2cyky8h2pj20ro0nggv7.jpg" width="700"></p>
+            <div class="notes"></div>
         </div>
     </section>
 
     <section  class="step slide" data-x="3000" data-y="1000" style="position: absolute; transform: translate(-50%, -50%) translate3d(3000px, 1000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
-        <h1>更语义化的新标记</h1>
-        <div class="cont">
-            <p>&lt;header&gt;, &lt;section&gt;, &lt;footer&gt;, &lt;nav&gt;, &lt;article&gt;, &lt;aside&gt;等等</p>
-            <p class="img"><img src="./images/html-structure.png" alt="HTML VS. HTML5"></p>
-            <div class="notes">
-                <p>语义化的标记更能反映现代典型的web用法，将有利于搜索引擎的索引（即SEO）、小屏幕设备和视障人士使用，代码可读性增强；</p>
-            </div>
-        </div>
+        <h1>Why Seajs ?</h1>
+        <br>
+        <h3>SeaJS是一个遵循CMD规范的JavaScript模块加载框架，可以实现JavaScript的模块化开发及加载机制。</h3>
+        <br />
+        <br />
+        <h2>优点</h2>
+        <br />
+        <h3>简单友好的模块定义规范</h3>
+        <br>
+        <h3>自然直观的代码组织方式</h3>
     </section>
 
     <section  class="step slide" data-x="2000" data-y="1000" style="position: absolute; transform: translate(-50%, -50%) translate3d(2000px, 1000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
-        <h1>更功能化的新标记</h1>
         <div class="cont">
-            <p>&lt;audio&gt;, &lt;vedio&gt;, &lt;canvas&gt;, &lt;progress&gt;, &lt;meter&gt;, &lt;details&gt;等等</p>
-            <ul>
-                <li>
-                    <code>vedio</code> demo: <a href="http://www.apple.com/html5/showcase/video/" class="external" target="_blank">Showcase of Apple</a>, <a href="http://www.html51.com/topic-demo-html5-video-simple.html" class="external" target="_blank">HTML5在线视频</a>, <a href="http://videojs.com/" class="external" target="_blank">videojs</a>, <a href="http://www.mediafront.org/" class="external" target="_blank">OSM</a>, <a href="http://camendesign.com/code/video_for_everybody/test.html" class="external" target="_blank">Video For Everybody</a>, <a href="http://flarevideo.com/" class="external" target="_blank">FlareVideo</a><p></p>
-                    <p class="notes">video格式：Mpeg4(ch/sa/IE9), Ogg(ff/ch/op), WebM(ff/ch/op)</p>
-                </li>
-                <li><a href="http://www.apple.com/html5/showcase/audio/" class="external" target="_blank">Audio Showcase of Apple HTML5</a></li>
-                <li><a href="http://demo.doyoe.com/html5/progress/progress.htm" target="_blank">Progress Base Demo</a></li>
-                <li><a href="http://openrise.com/lab/PlasmaTree/" class="external" target="_blank">Canvas Plasmatree</a>、<a href="http://www.the389.com/7/3/" class="external" target="_blank">Canvas three</a>、<a href="http://bomomo.com/" class="external" target="_blank">Canvas bomomo</a>、<a href="http://dan.forys.co.uk/experiments/mesmerizer/" class="external" target="_blank">Canvas mesmerizer</a>、<a href="http://demo.surda.cn/burn-canvas-test.html" class="external" target="_blank">Canvas burn</a>、<a href="http://demo.surda.cn/tunneler-canvas.html" class="external" target="_blank">Canvas tunneler</a></li>
-            </ul>
-        </div>
-        <div class="notes">
-            <p><a href="http://www.html5canvastutorials.com/tutorials/html5-canvas-element/" target="blank" class="external">canvas</a> 元素使用 JavaScript 在网页上绘制图像。canvas 元素本身是没有绘图能力的，所有的绘制工作在 JavaScript 内部完成。画布是一个矩形区域，您可以控制其每一像素。canvas 拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。</p>
+            <div class="code">
+                <p>
+        <pre>
+
+        define( function( require, exports ){
+
+            function log(){
+                //...
+            }
+
+            function each(){
+                //...
+            }
+
+            exports.log = log;
+            exports.each = each;
+        } );
+
+        //utils.js
+        </pre>
+                </p>
+            </div>
         </div>
     </section>
 
     <section  class="step slide" data-x="1000" data-y="1000" style="position: absolute; transform: translate(-50%, -50%) translate3d(1000px, 1000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
-        <h1>删除了部分旧标记</h1>
         <div class="cont">
-            <ul>
-                <li><code>acronym</code>, <code>applet</code>, <code>basefont</code>, <code>big</code>, <code>center</code>, <code>dir</code>, <code>font</code>, <code>frame</code>, <code>frameset</code>, <code>isindex</code>, <code>noframes</code>, <code>strike</code>, <code>tt</code><p></p></li>
-            </ul>
-            <div class="notes">这些被删除的旧标记要么可被其它标记代替，要么能用CSS实现，要么是无语义的</div>
-            <h2>&lt;acronym&gt;之于&lt;abbr&gt;：</h2>
-            <div class="notes">acronym与abbr标记都是用来表示缩写的，区别在abbr是常规的缩写，而acronym则是用来表示特定的首字母缩写。HTML5认为没有存在2个缩写标记的必要，于是选择移除acronym</div>
-            <h2>&lt;center&gt;之于CSS align property</h2>
             <div class="code">
-                <span class="legend">从前：你可能这样实现元素居中</span>
-                <pre><code>&lt;center&gt;这里是要居中显示的内容&lt;/center&gt;</code></pre>
-            </div>
+                <p>
+        <pre>
 
-            <div class="code">
-                <span class="legend">现在：我们更推荐这样实现</span>
-				<pre><code>div{text-align:center;}
-                    &lt;div&gt;这里是要居中显示的内容&lt;/div&gt;</code></pre>
+        define( function( require, exports ){
+            var util = require('./utils.js');
+
+            var Component = {
+                doSth: function(){
+                    util.log('log....');
+                }
+            };
+
+            return Component;
+        } );
+
+        //Component.js
+        </pre>
+                </p>
             </div>
         </div>
     </section>
 
-    <section  class="step slide" data-x="0" data-y="1000" style="position: absolute; transform: translate(-50%, -50%) translate3d(0px, 1000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
-        <h1>修改了部分旧标记</h1>
+    <section class="step" data-x="-1000" data-y="1200" data-rotate="90" style="position: absolute; transform: translate(-50%, -50%) translate3d(-1000px, 1200px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(90deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
+        <h3 class="header">AMD & CMD</h3>
+
+        <footer>
+            <a href="https://github.com/amdjs/amdjs-api/wiki/AMD" target="_blank" class="external">AMD</a>
+            <a href="https://github.com/seajs/seajs/issues/242" target="_blank" class="external">CMD</a>
+        </footer>
+    </section>
+
+    <section  class="step slide" data-x="0" data-y="1000" style="position: absolute; transform: translate(-50%, -50%) translate3d(1000px, 1000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
+        <h1>主要区别</h1>
+        <br>
         <div class="cont">
-            <ul>
-                <li><code>a</code>, <code>b</code>, <code>cite</code>, <code>hr</code>, <code>i</code>, <code>input</code>, <code>menu</code>, <code>meta</code>, <code>s</code>, <code>small</code>, <code>u</code></li>
-            </ul>
-            <div class="notes">这些被修改的标记，有的增加或删减了属性、功能，有的赋予了新的语义</div>
-            <h2>a标记的修改之一：</h2>
-            <div class="code">
-                <span class="legend">从前：a只能包含一些inline级别元素</span>
-                <pre><code>&lt;a href="#"&gt;inline node&lt;/a&gt;</code></pre>
-            </div>
-            <div class="code">
-                <span class="legend">现在：a允许你包含一个段落</span>
-				<pre><code>&lt;a href="#"&gt;
-                    &lt;p&gt;A hyperlink that contains a paragraph.&lt;/p&gt;
-                    &lt;/a&gt;</code></pre>
-            </div>
-            <div class="notes">同时a标记的name属性被废弃，且新增了media属性，target属性也被修改</div>
-            <h2>i标记被赋予的语义：</h2>
-            <p>i标记现在被用来突出不同意见或语义</p>
+            <img src="http://ww4.sinaimg.cn/large/8b31d4ddgw1f2d0pi9vbzj20ao03k3yv.jpg">
+            <img src="http://ww2.sinaimg.cn/large/8b31d4ddgw1f2d0ticzkcj208t02tt8t.jpg" width="400">
         </div>
+        <br>
+        <br>
+        <h3>CMD推崇依赖就近,可以把依赖写进代码的任意一行</h3>
+        <br>
+        <h3>AMD推崇依赖前置,在解析和执行模块之前,就必须指明当前模块的依赖</h3>
+
     </section>
 
-    <section class="step" data-x="-1000" data-y="1200" data-rotate="90" id="step-16" style="position: absolute; transform: translate(-50%, -50%) translate3d(-1000px, 1200px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(90deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
-        <h1 class="header">更简洁的代码</h1>
-    </section>
 
+
+
+
+
+
+    <section class="step" data-x="-1000" data-y="2000" data-rotate="180" style="position: absolute; transform: translate(-50%, -50%) translate3d(-1000px, 2000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(180deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
+        <h1 class="header">模块化加载器的实现</h1>
+    </section>
+    
     <section  class="step slide" data-x="0" data-y="2000" style="position: absolute; transform: translate(-50%, -50%) translate3d(0px, 2000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
         <h1>避免不必要的复杂</h1>
         <div class="cont">
@@ -283,10 +316,6 @@
                 <p>同时，用link元素引用样式表，type="text/css"是可以省略的；script元素的type=”text/javascript”也可以不写</p>
             </div>
         </div>
-    </section>
-
-    <section class="step" data-x="-1000" data-y="2000" data-rotate="180" id="step-18" style="position: absolute; transform: translate(-50%, -50%) translate3d(-1000px, 2000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(180deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
-        <h1 class="header">超酷的CSS3</h1>
     </section>
 
     <section  class="step slide" data-x="1000" data-y="2000" style="position: absolute; transform: translate(-50%, -50%) translate3d(1000px, 2000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
@@ -365,7 +394,7 @@
         </footer>
     </section>
 
-    <section class="step" data-x="5000" data-y="4000" data-rotate="0" id="step-24" style="position: absolute; transform: translate(-50%, -50%) translate3d(5000px, 4000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
+    <section class="step" data-x="5000" data-y="4000" data-rotate="0"  style="position: absolute; transform: translate(-50%, -50%) translate3d(5000px, 4000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
         <h1 class="header">激动人心的JS API</h1>
     </section>
 
@@ -424,7 +453,7 @@
         </footer>
     </section>
 
-    <section class="step" data-x="2000" data-y="4000" data-rotate="90" id="step-28" style="position: absolute; transform: translate(-50%, -50%) translate3d(2000px, 4000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(90deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
+    <section class="step" data-x="2000" data-y="4000" data-rotate="90" style="position: absolute; transform: translate(-50%, -50%) translate3d(2000px, 4000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(90deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
         <h1 class="header">HTML5在游戏上的进展</h1>
     </section>
 
