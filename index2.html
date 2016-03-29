@@ -281,74 +281,49 @@
 
     </section>
 
-
-
-
-
-
-
     <section class="step" data-x="-1000" data-y="2000" data-rotate="180" style="position: absolute; transform: translate(-50%, -50%) translate3d(-1000px, 2000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(180deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
         <h1 class="header">模块化加载器的实现</h1>
     </section>
     
     <section  class="step slide" data-x="0" data-y="2000" style="position: absolute; transform: translate(-50%, -50%) translate3d(0px, 2000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
-        <h1>避免不必要的复杂</h1>
+        <h1>模块化加载器的原理</h1>
+        <br>
+        <br>
         <div class="cont">
-            <h2>Doctype：</h2>
-            <div class="code">
-                <span class="legend">从前</span>
-                <p>&lt;!DOCTYPE html PUBLIC "-//W3C/DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;</p>
-            </div>
-            <div class="code">
-                <span class="legend">现在</span>
-                <p>&lt;!DOCTYPE html"&gt;</p>
-            </div>
-            <h2>编码：</h2>
-            <div class="code">
-                <span class="legend">从前</span>
-                <p>&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;</p>
-            </div>
-            <div class="code">
-                <span class="legend">现在</span>
-                <p>&lt;meta charset="utf-8" /&gt;</p>
-            </div>
-            <div class="notes">
-                <p>同时，用link元素引用样式表，type="text/css"是可以省略的；script元素的type=”text/javascript”也可以不写</p>
-            </div>
+            <h3>数据模块的加载</h3>
+            <img src="http://ww2.sinaimg.cn/large/8b31d4ddgw1f2e3usu2idj20f2055gmw.jpg">
         </div>
     </section>
 
     <section  class="step slide" data-x="1000" data-y="2000" style="position: absolute; transform: translate(-50%, -50%) translate3d(1000px, 2000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
-        <h1>文字遮罩效果</h1>
+        <h1>模块化加载器的原理</h1>
         <div class="cont">
-            <p class="img"><img src="./images/mask_text.png" alt="CSS3 Masking Text"></p>
-            <ul>
-                <li>DEMO: <a href="http://demo.doyoe.com/css3/background-clip/mask-text2.htm" target="_blank">上图实际效果</a></li>
-                <li>应用: <a href="http://demo.doyoe.com/css3/background-clip/mask-text.htm" target="_blank">CSS3 Mask text</a></li>
-                <li>应用: <a href="http://demo.doyoe.com/css3/background-clip/mask-text3.htm" target="_blank">CSS3光影划过文字效果</a></li>
-            </ul>
-        </div>
-        <div class="notes">
-            <p>这种效果以前可能更多出现在flash动画中，如今CSS3不过是信手拈来。</p>
+            <h3>解析模块的层次依赖关系</h3>
+            <img src="http://ww4.sinaimg.cn/large/8b31d4ddgw1f2e4bwem8pj207k05iglr.jpg">
+            <img src="http://ww4.sinaimg.cn/large/8b31d4ddgw1f2e4d4dc2hj207j06imxh.jpg">
+            <br>
+            <img src="http://ww3.sinaimg.cn/large/8b31d4ddgw1f2e4pcdb7hj20bc06h0tq.jpg">
         </div>
     </section>
 
     <section  class="step slide" data-x="2000" data-y="2000" style="position: absolute; transform: translate(-50%, -50%) translate3d(2000px, 2000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
-        <h1>文字描边、镂空效果</h1>
+        <h1>存在的问题</h1>
         <div class="cont">
-            <p class="img"><img src="./images/stroke_text.png" alt="CSS3 Stroke Text"></p>
+            <br>
             <ul>
-                <li>DEMO: <a href="http://demo.doyoe.com/css3/text-stroke/stroke-text.htm" target="_blank">CSS3文字描边效果</a></li>
+                <li>事件机制(onerror, onload, onreadychange)</li>
+                <li>循环依赖</li>
+                <li>...</li>
             </ul>
-            <p class="img"><img src="./images/hollow_text.png" alt="CSS3 Hollow Text"></p>
-            <ul>
-                <li>DEMO: <a href="http://demo.doyoe.com/css3/text-fill-color/hollow-text.htm" target="_blank">CSS3文字镂空效果</a></li>
-            </ul>
-        </div>
-        <div class="notes">
-            <p>以前是不是从没试过不用图片，而直接使用css实现这种效果？那么，从现在开始，你可以去尝试看看，展示你的与众不同</p>
+            <footer>
+                <a href="https://github.com/RubyLouvre/mass-Framework/blob/master/mass.js" target="_blank" class="external">https://github.com/RubyLouvre/mass-Framework/blob/master/mass.js</a>
+            </footer>
         </div>
     </section>
+
+
+
+
 
     <section  class="step slide active" data-x="3000" data-y="2000" style="position: absolute; transform: translate(-50%, -50%) translate3d(3000px, 2000px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); transform-style: preserve-3d;">
         <h1>圆角、阴影、半透明效果</h1>
